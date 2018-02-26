@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-
-namespace Shapes
+﻿namespace Shapes
 {
     public class Circle : Ellipse
     {
