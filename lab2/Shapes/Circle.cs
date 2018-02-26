@@ -11,9 +11,5 @@ namespace Shapes
         {
             _radius = radius;
         }
-
-        public override void GetArea()
-        {
-        }
     }
 }
