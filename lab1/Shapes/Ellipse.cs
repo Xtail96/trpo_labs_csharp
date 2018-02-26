@@ -4,7 +4,7 @@ namespace Shapes
 {
     public class Ellipse
     {
-        protected Location _location;
+        protected Location _location;  // поле доступное в классе наследнике
         private int _radiusX;
         private int _radiusY;
 
