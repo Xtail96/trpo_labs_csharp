@@ -1,6 +1,8 @@
-﻿namespace Shapes
+﻿using System;
+
+namespace Shapes
 {
-    public abstract class Shape
+    public abstract class Shape : IComparable
     {
         private Location _location;
 
@@ -16,5 +18,8 @@
         }
 
         public abstract double GetArea();
+
+        //сравнивать будем по площади фигуры
+        public abstract int CompareTo(object obj);
     }
 }

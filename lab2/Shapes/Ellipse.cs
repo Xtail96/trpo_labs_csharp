@@ -19,5 +19,18 @@ namespace Shapes
         {
             return Math.PI * _radiusX *_radiusY;
         }
+
+        public override int CompareTo(object obj)
+        {
+            var shape = obj as Shape;
+            if(shape != null)
+            {
+                return (int)(GetArea() - shape.GetArea());
+            }
+            else
+            {
+                throw new InvalidCastException("Can't compare Shape object with another type");
+            }
+        }
     }
 }
