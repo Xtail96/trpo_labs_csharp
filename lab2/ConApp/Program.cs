@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using Shapes;
 using ConApp.Factories;
-using System.Linq;
 
 namespace ConApp
 {
@@ -52,13 +52,27 @@ namespace ConApp
             //CreateShapes(ref shapes);
             CreateShapesByFactory(ref shapes);
 
-            foreach(var shape in shapes)
+            foreach (var shape in shapes)
             {
                 Console.Write("Object: {0}  ", shape.GetType());
                 Console.WriteLine(shape.GetArea());
             }
+            Console.WriteLine();
 
-            var shapes1 = shapes.Select(x => x.GetArea() < 20);
+            var shapes1 = from shape in shapes where shape.GetArea() < 20 select shape;
+            Console.WriteLine("Shapes1:");
+            foreach (var shape in shapes1)
+            {
+                Console.WriteLine(shape);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Shapes2:");
+            var shapes2 = shapes.Where(x => x.GetArea() < 20);
+            foreach(var shape in shapes2)
+            {
+                Console.WriteLine(shape);
+            }
 
             Console.ReadKey();
         }
