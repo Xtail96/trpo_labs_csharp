@@ -2,17 +2,26 @@
 
 namespace Shapes
 {
-    public class Ellipse : Shape
+    public class Ellipse : Shape, IPublisher
     {
         protected Location _location;  // поле доступное в классе наследнике
         private int _radiusX;
         private int _radiusY;
+
+        public event EventHandler<Location> LocationChanged;
 
         public Ellipse(int x, int y, int radiusX, int radiusY) : base (x, y)
         {
             _location = new Location() { X = x, Y = y }; // специальный синтаксис инициализации свойств объекта
             _radiusX = radiusX;
             _radiusY = radiusY;
+        }
+
+        public override void MoveTo(int x, int y)
+        {
+            base.MoveTo(x, y);
+            if (LocationChanged != null)
+                LocationChanged(this, _location);
         }
 
         public override double GetArea()

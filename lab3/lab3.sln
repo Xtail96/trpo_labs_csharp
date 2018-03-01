@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{16C11AA9-9CC8-4F03-97E2-D6B6D6081F50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConApp", "ConApp\ConApp.csproj", "{7CF9BD26-19DE-4795-9858-05BF5ED92282}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConApp", "ConApp\ConApp.csproj", "{B19CA807-BB99-44B2-B226-F6CC00EC174E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{16C11AA9-9CC8-4F03-97E2-D6B6D6081F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16C11AA9-9CC8-4F03-97E2-D6B6D6081F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16C11AA9-9CC8-4F03-97E2-D6B6D6081F50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CF9BD26-19DE-4795-9858-05BF5ED92282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CF9BD26-19DE-4795-9858-05BF5ED92282}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CF9BD26-19DE-4795-9858-05BF5ED92282}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CF9BD26-19DE-4795-9858-05BF5ED92282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B19CA807-BB99-44B2-B226-F6CC00EC174E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19CA807-BB99-44B2-B226-F6CC00EC174E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B19CA807-BB99-44B2-B226-F6CC00EC174E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B19CA807-BB99-44B2-B226-F6CC00EC174E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

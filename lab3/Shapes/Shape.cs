@@ -11,7 +11,7 @@ namespace Shapes
             _location = new Location() { X = x, Y = y };
         }
 
-        public void MoveTo(int x, int y)
+        public virtual void MoveTo(int x, int y)
         {
             _location.X = x;
             _location.Y = y;
