@@ -4,7 +4,7 @@ namespace Shapes
 {
     public abstract class Shape : IComparable
     {
-        private Location _location;
+        protected Location _location;
 
         protected Shape(int x, int y)
         {

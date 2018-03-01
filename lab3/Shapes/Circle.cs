@@ -8,5 +8,10 @@
         {
             _radius = radius;
         }
+
+        public override string ToString()
+        {
+            return string.Format("Circle: ({0}, {1} ; {2})", _location.X, _location.Y, _radius);
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shapes
 {
-    interface IPublisher
+    public interface IPublisher
     {
         event EventHandler<Location> LocationChanged;
     }
