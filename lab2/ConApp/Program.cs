@@ -14,7 +14,7 @@ namespace ConApp
         private static Random _random = new Random(DateTime.Now.Millisecond);
 
 
-        static void CreateShapes(ref IList<Shape> shapes)
+        static void CreateShapes(ref ICollection<Shape> shapes)
         {
             for (int i = 0; i < SHAPE_COUNT; i++)
             {
@@ -29,7 +29,7 @@ namespace ConApp
             }
         }
 
-        static void CreateShapesByFactory(ref IList<Shape> shapes)
+        static void CreateShapesByFactory(ref ICollection<Shape> shapes)
         {
             var factories = new List<ShapeFactory>(new ShapeFactory[]
                 {
@@ -39,16 +39,17 @@ namespace ConApp
             for (int i = 0; i < SHAPE_COUNT; i++)
             {
                 int factoryIdx = _random.Next() % factories.Count;
+                var factory = factories[factoryIdx];
 
                 int x = _random.Next();
                 int y = _random.Next();
-                shapes.Add(factories[factoryIdx].CreateShape(x, y));
+                shapes.Add(factory.CreateShape(x, y));
             }
         }
 
         static void Main(string[] args)
         {
-            IList<Shape> shapes = new List<Shape>();
+            ICollection<Shape> shapes = new List<Shape>();
             //CreateShapes(ref shapes);
             CreateShapesByFactory(ref shapes);
 
@@ -73,6 +74,13 @@ namespace ConApp
             {
                 Console.WriteLine(shape);
             }
+            Console.WriteLine();
+
+
+            ICollection<Shape> sortedShapes = new SortedSet<Shape>();
+            CreateShapesByFactory(ref sortedShapes);
+            Console.WriteLine("Sorted Shapes:");
+            sortedShapes.ToList<Shape>().ForEach(i => Console.WriteLine("{0} | Area:{1}", i, i.GetArea()));
 
             Console.ReadKey();
         }
