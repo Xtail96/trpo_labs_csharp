@@ -63,7 +63,7 @@ namespace Shapes
             }
         }
 
-        public string JSONSerialize()
+        public override string JSONSerialize()
         {
             JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
             return JsonConvert.SerializeObject(this, settings);

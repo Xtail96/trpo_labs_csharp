@@ -31,9 +31,28 @@ namespace Shapes
             }
         }
 
+        //сравнивать будем по площади фигуры
+        public virtual int CompareTo(object obj)
+        {
+            if (obj is Shape shape)
+            {
+                if (GetArea() < shape.GetArea())
+                    return -1;
+                else if (GetArea() > shape.GetArea())
+                    return 1;
+                else
+                    return 0;
+            }
+            else
+            {
+                throw new InvalidCastException("Can't compare Shape object with another type");
+            }
+        }
+
         public abstract double GetArea();
 
-        //сравнивать будем по площади фигуры
-        public abstract int CompareTo(object obj);
+        // представление объекта в виде JSON
+        public abstract string JSONSerialize();
+
     }
 }

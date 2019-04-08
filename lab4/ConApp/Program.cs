@@ -14,6 +14,11 @@ namespace ConApp
             Ellipse ellipse = new Ellipse(10, 10, 50, 15);
             var str = ellipse.JSONSerialize();
             Console.WriteLine(str);
+
+            Rectangle rect = new Rectangle(0, 0, 10, 5);
+            str = rect.JSONSerialize();
+            Console.WriteLine(str);
+
             Console.ReadKey();
         }
     }
