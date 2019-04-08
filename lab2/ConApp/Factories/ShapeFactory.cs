@@ -10,7 +10,7 @@ namespace ConApp.Factories
 
     internal class EllipseFactory : ShapeFactory
     {
-        private Random _random = new Random(DateTime.Now.Millisecond);
+        private readonly Random _random = new Random(DateTime.Now.Millisecond);
 
         public override Shape CreateShape(int x, int y)
         {
@@ -23,6 +23,16 @@ namespace ConApp.Factories
         public override Shape CreateShape(int x, int y)
         {
             return new Circle(x, y, 0);
+        }
+    }
+
+    internal class RectangleFactory : ShapeFactory
+    {
+        private readonly Random _random = new Random(DateTime.Now.Millisecond);
+
+        public override Shape CreateShape(int x, int y)
+        {
+            return new Rectangle(x, y, _random.Next() % 1000, _random.Next() % 1000);
         }
     }
 }

@@ -9,12 +9,12 @@ namespace ConApp
 {
     class Program
     {
-        private const int SHAPE_COUNT = 5;
+        private const int SHAPE_COUNT = 10;
 
-        private static Random _random = new Random(DateTime.Now.Millisecond);
+        private static readonly Random _random = new Random(DateTime.Now.Millisecond);
 
 
-        static void CreateShapes(ref ICollection<Shape> shapes)
+        /*static void CreateShapes(ref ICollection<Shape> shapes)
         {
             for (int i = 0; i < SHAPE_COUNT; i++)
             {
@@ -25,16 +25,26 @@ namespace ConApp
                 if (flag)
                     shapes.Add(new Ellipse(x, y, _random.Next() % 40, _random.Next() % 40));
                 else
-                    shapes.Add(new Circle(x, y, _random.Next() % 40));
+                {
+                    if(_random.Next() % 2 == 0)
+                    {
+                        shapes.Add(new Circle(x, y, _random.Next() % 40));
+                    }
+                    else
+                    {
+                        shapes.Add(new Rectangle(x, y, _random.Next() % 25, _random.Next() % 50));
+                    }
+                }
             }
-        }
+        }*/
 
         static void CreateShapesByFactory(ref ICollection<Shape> shapes)
         {
             var factories = new List<ShapeFactory>(new ShapeFactory[]
                 {
                     new EllipseFactory(),
-                    new CircleFactory()
+                    new CircleFactory(),
+                    new RectangleFactory()
                 });
             for (int i = 0; i < SHAPE_COUNT; i++)
             {
