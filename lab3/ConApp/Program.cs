@@ -16,6 +16,18 @@ namespace ConApp
             if (publisher is Shape)
                 ((Shape)publisher).MoveTo(50, 50);
 
+
+            IPublisher myPublisher = new Rectangle(0, 0, 10, 5);
+            myPublisher.LocationChanged += delegate (object obj, Location l)
+            {
+                Console.WriteLine("{0} moved to: ({1}, {2})", obj, l.X, l.Y);
+            };
+            Console.WriteLine(myPublisher);
+            if(myPublisher is Shape)
+            {
+                ((Shape)myPublisher).MoveTo(100, 100);
+            }
+
             Console.ReadKey();
         }
     }
