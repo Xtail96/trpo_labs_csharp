@@ -67,11 +67,5 @@ namespace Shapes
             return string.Format("Rectangle: (Location: ({0}, {1}); Sides: ({2}, {3}))",
                 this._location.X, this._location.Y, this.A, this.B);
         }
-
-        public override string JSONSerialize()
-        {
-            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
-            return JsonConvert.SerializeObject(this, settings);
-        }
     }
 }

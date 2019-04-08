@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace Shapes
 {
@@ -52,7 +53,11 @@ namespace Shapes
         public abstract double GetArea();
 
         // представление объекта в виде JSON
-        public abstract string JSONSerialize();
+        public virtual string JSONSerialize()
+        {
+            JsonSerializerSettings settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };
+            return JsonConvert.SerializeObject(this, settings);
+        }
 
     }
 }
