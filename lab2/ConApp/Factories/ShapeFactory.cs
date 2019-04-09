@@ -26,6 +26,9 @@ namespace ConApp.Factories
         }
     }
 
+    /// <summary>
+    /// Создает прямоугольник
+    /// </summary>
     internal class RectangleFactory : ShapeFactory
     {
         private readonly Random _random = new Random(DateTime.Now.Millisecond);

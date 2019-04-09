@@ -3,6 +3,14 @@ using System;
 
 namespace ConApp
 {
+    class SomeAbstractClass
+    {
+        public static void StaticMethod(object obj, Location l)
+        {
+            Console.WriteLine("static function");
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -22,6 +30,8 @@ namespace ConApp
             {
                 Console.WriteLine("{0} moved to: ({1}, {2})", obj, l.X, l.Y);
             };
+            myPublisher.LocationChanged += SomeAbstractClass.StaticMethod;
+
             Console.WriteLine(myPublisher);
             if(myPublisher is Shape)
             {

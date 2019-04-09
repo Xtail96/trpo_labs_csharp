@@ -38,19 +38,25 @@ namespace ConApp
             }
         }*/
 
+        // Создает фигуру с помощью фабрики
         static void CreateShapesByFactory(ref ICollection<Shape> shapes)
         {
+            // Создаем фабрики для создания фигур
             var factories = new List<ShapeFactory>(new ShapeFactory[]
                 {
                     new EllipseFactory(),
                     new CircleFactory(),
                     new RectangleFactory()
                 });
+
+            // Создаем фигуры
             for (int i = 0; i < SHAPE_COUNT; i++)
             {
+                // Выбираем случайную фабрику из созданных
                 int factoryIdx = _random.Next() % factories.Count;
                 var factory = factories[factoryIdx];
 
+                // Создаем фигуру со случайными координатами
                 int x = _random.Next();
                 int y = _random.Next();
                 shapes.Add(factory.CreateShape(x, y));

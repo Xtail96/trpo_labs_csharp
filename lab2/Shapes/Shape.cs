@@ -36,5 +36,7 @@ namespace Shapes
                 throw new InvalidCastException("Can't compare Shape object with another type");
             }
         }
+
+        //public virtual void Show() { }
     }
 }
