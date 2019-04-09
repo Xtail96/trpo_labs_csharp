@@ -10,7 +10,10 @@ namespace ConnApp
             //Console.WriteLine("Hello world!!!");
             //Console.ReadKey(); 
 
+            // Создаем прямоугольник
             Rectangle rect = new Rectangle(0, 0, 10, 5);
+
+            // Выодим информацию в консоль
             rect.Show();
 
             Ellipse ellipse = new Ellipse(10, 10, 100, 50);
